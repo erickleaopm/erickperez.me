@@ -21,6 +21,7 @@ export default ({ data }) => {
   )
 }
 
+// Add github to the query
 export const query = graphql`
   {
     allStrapiProjects(filter: { featured: { eq: true } }) {
@@ -28,7 +29,6 @@ export const query = graphql`
         id
         title
         description
-        github
         url
         image {
           childImageSharp {
