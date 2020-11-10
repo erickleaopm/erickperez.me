@@ -30,6 +30,7 @@ export const query = graphql`
         title
         description
         url
+        github
         image {
           childImageSharp {
             fluid {

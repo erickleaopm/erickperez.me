@@ -577,7 +577,8 @@ Jobs
 .job-info h3 {
   font-weight: 400;
 }
-.job-info h4 {
+.job-info h4,
+.job-info a {
   text-transform: uppercase;
   color: var(--clr-grey-5);
   background: var(--clr-grey-9);
@@ -585,8 +586,18 @@ Jobs
   padding: 0.375rem 0.75rem;
   border-radius: var(--radius);
 }
+.job-info a:hover,
+.job-info a:active {
+  color: var(--clr-primary-5);
+}
 .job-date {
   letter-spacing: var(--spacing);
+}
+.job-date span {
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  line-height: 1rem;
 }
 .job-desc {
   display: grid;

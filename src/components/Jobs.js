@@ -1,6 +1,6 @@
 import React from "react"
 import Title from "./Title"
-import { FaAngleDoubleRight } from "react-icons/fa"
+import { FaAngleDoubleRight, FaShareSquare } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 
@@ -22,6 +22,10 @@ const query = graphql`
     }
   }
 `
+
+const splitPascalCase = word => {
+  return word.match(/($[a-z])|[A-Z][^A-Z]+/g).join("-")
+}
 
 const Jobs = () => {
   const data = useStaticQuery(query)
@@ -52,12 +56,18 @@ const Jobs = () => {
         {/* Job info */}
         <article className="job-info">
           <h3>{position}</h3>
-          <h4>{company}</h4>
-          <p className="job-date">{date}</p>
+          <h4>
+            <a href={url} target="_blank">
+              {company}
+            </a>
+          </h4>
+          <p className="job-date">
+            {date} <span>({splitPascalCase(type_of_job)})</span>
+          </p>
           {description.map(item => {
             return (
               <div key={item.id} className="job-desc">
-                <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
+                <FaAngleDoubleRight className="job-icon" />
                 <p>{item.name}</p>
               </div>
             )

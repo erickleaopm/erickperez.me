@@ -2,15 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Image from "gatsby-image"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
-const Project = ({
-  title,
-  description,
-  stack,
-  url,
-  image,
-  index,
-  github = "https://erickperez.me",
-}) => {
+const Project = ({ title, description, stack, url, github, image, index }) => {
   return (
     <article className="project">
       <Image fluid={image.childImageSharp.fluid} className="project-img" />
@@ -24,7 +16,7 @@ const Project = ({
           })}
         </div>
         <div className="project-links">
-          {github && (
+          {github !== "N/A" && (
             <a href={github}>
               <FaGithubSquare className="project-icon" />
             </a>
