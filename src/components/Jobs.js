@@ -57,7 +57,7 @@ const Jobs = () => {
         <article className="job-info">
           <h3>{position}</h3>
           <h4>
-            <a href={url} target="_blank">
+            <a href={url} target="_blank" rel="noreferrer">
               {company}
             </a>
           </h4>

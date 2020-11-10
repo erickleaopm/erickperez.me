@@ -17,12 +17,12 @@ const Project = ({ title, description, stack, url, github, image, index }) => {
         </div>
         <div className="project-links">
           {github !== "N/A" && (
-            <a href={github}>
+            <a href={github} target="_blank" rel="noreferrer">
               <FaGithubSquare className="project-icon" />
             </a>
           )}
 
-          <a href={url}>
+          <a href={url} target="_blank" rel="noreferrer">
             <FaShareSquare className="project-icon" />
           </a>
         </div>
