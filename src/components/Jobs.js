@@ -3,6 +3,7 @@ import Title from "./Title"
 import { FaAngleDoubleRight, FaShareSquare } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
+import { splitPascalCase } from "../libraries"
 
 const query = graphql`
   {
@@ -22,10 +23,6 @@ const query = graphql`
     }
   }
 `
-
-const splitPascalCase = word => {
-  return word.match(/($[a-z])|[A-Z][^A-Z]+/g).join("-")
-}
 
 const Jobs = () => {
   const data = useStaticQuery(query)
