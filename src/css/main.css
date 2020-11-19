@@ -797,6 +797,7 @@ Blog
 
 .blog-footer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
@@ -805,8 +806,11 @@ Blog
   font-weight: bold;
   color: var(--clr-grey-5);
 }
-.blog-footer p:first-of-type {
-  display: inline-block;
+.blog-footer ul {
+  display: flex;
+  margin-bottom: 0.75rem;
+}
+.blog-footer ul p {
   background: var(--clr-grey-9);
   color: var(--clr-grey-5);
   margin-right: 0.5rem;
